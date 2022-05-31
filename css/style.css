@@ -1,0 +1,140 @@
+html {
+    background: #333;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    /* background-color: #00539F; */
+
+}
+
+/* Anatomía de una regla CSS */
+/* p {
+    color: red;
+}
+
+p {
+    color: red;
+    width: 500px;
+    border: 1px solid cyan;
+} */
+
+
+/* Seleccionar varios elementos */
+/* p, li, h1 {
+    color: red;
+} */
+
+
+/* Diferentes tipos de selectores */
+
+/* selector de elemento */
+/* p {
+    color: coral;
+}
+
+/* selector de ID (identificador) /
+#font-red-id {
+    color: violet;
+}
+
+/* selector de clase /
+.font-red-class {
+    color: blueviolet;
+}
+
+/ selector de atributo /
+img[alt="perrito guapeton"]{
+    width: 100px;
+    height: 200px;
+}
+/* Selector de pseudoclase /
+a:hover{
+    cursor: pointer;
+    color: aqua;
+} */
+
+/* Fuentes y texto */
+h1 {
+    font-size: 60px;
+    text-align: center;
+}
+
+p, li{
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    /* list-style-type:upper-roman;
+    list-style-type:lower-roman; */
+}
+
+
+/* Cajas, cajas, todo se trata de cajas */
+/* · padding (relleno), el espacio alrededor del contenido. En el ejemplo siguiente, es el espacio alrededor del texto del párrafo.
+· border (marco), la línea que se encuentra fuera del relleno.
+· margin (margen), el espacio fuera del elemento que lo separa de los demás.
+
+· width (ancho del elemento)
+· background-color, el color de fondo del contenido y del relleno
+· color, el color del contenido del elemento (generalmente texto)
+· text-shadow: coloca una sombra difuminada en el texto dentro del elemento
+· display: selecciona el modo de visualización para el elemento (no te preocupes de esto por ahora)
+
+*/
+
+/* Cambiar color de la página */
+html {
+    background-color: #00539F;
+}
+
+/* Dar estilo al cuerpo del documento */
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FF9500;
+    /* background-color: #615f5f; */
+    padding: 0px 20px 20px 20px;
+    border: 5px solid black;
+}
+
+
+img[src="https://www.elespectador.com/resizer/SCJ7Cb2kaD_u2LoCQxHcBVTfA6I=/1200x675/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/T2REW657GVA7RNQMDTDLMFZ6TM.jpg"]
+{
+    width: 500px;
+    height: 350px;
+    /* border: 1px solid wheat;
+    border-radius: 10px; */
+}
+/* 337.5 - 338px */
+
+/* img[src="https://www.purina.es/sites/default/files/styles/ttt_image_original/public/2021-02/BREED%20Hero%20Desktop_0105_golden_retriever.webp?itok=5GeVvNCe"]
+
+{
+    width: 500px;
+    height: 350px;
+} */
+
+
+
+/* Posicionar y dar estilo al título principal de la página */
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    color: #00539F;
+    text-shadow: 3px 3px 1px black;
+}
+
+/* Centrar la imagen */
+img {
+    display: block;
+    margin: 0 auto; /* el primer valor afecta al top y bottom, el segundo auto es valor especial que divide el espacio disponible entre izquierda y derecha */
+    
+}
+
+
+
+/**** Fundamentos de Javascript ****/
+
+/* En el archivo main.js */
+
+
+/* La respuesta está en el nombre amigo, obvio que no - Grupo React Development */

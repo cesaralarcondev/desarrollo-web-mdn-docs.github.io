@@ -1,0 +1,941 @@
+HTTP -> Protocolo de Tranferencia de hipertexto, o es un protocolo de mensajería que permite a los navegadores web comunicarse con los servidores web (donde se almacen los sitios web). Una conversación típica.
+
+· El lenguaje de marcado de hipertexto, o HTML, es un lenguaje de marcado que consta de diferentes elementos en los que puedes ajustar (marcar) el contenido para darle significado (semántica) y estructura. El HTML simple se ve así:
+
+<h1>Este es un encabezado de alto nivel</h1>
+
+<p>Este es un párrafo de texto.</p>
+
+<img src="cat.jpg" alt="Una imagen de mi gato">
+
+Si adoptamos una analogía de la construcción de casas, HTML sería como los cimientos y las paredes de la casa, que le dan estructura y la mantienen unida.
+
+
+
+· Hojas de estilo en cascada (CSS por "Cascading Style Sheets") es un lenguaje basado en reglas que se utiliza para aplicar estilos a tu HTML, por ejemplo, establecer colores del texto y del fondo, agregar bordes, animar cosas o diseñar una página de cierta manera. Como un sencillo ejemplo, el siguiente código convertirá nuestro párrafo HTML en rojo:
+
+p  {
+  color: red;
+}
+
+
+En la analogía de la casa, CSS es como la pintura, el papel tapiz, las alfombras y los cuadros que usarías para hacer que la casa se vea bien.
+
+
+
+· JavaScript es el lenguaje de programación que usamos para agregar interactividad a los sitios web, desde el cambio de estilo dinámico hasta la obtención de actualizaciones desde el servidor, pasando por gráficos complejos en 3D. El siguiente JavaScript simple almacenará en la memoria una referencia a nuestro párrafo y cambiará el texto dentro de él:
+
+let pElem = document.querySelector('p');
+pElem.textContent =  '¡Cambiamos el texto!';
+
+En la analogía de la casa, JavaScript es como la cocina, el televisor, el microondas o la secadora de pelo — las cosas que le dan a tu casa una útil funcionalidad.
+
+· Bibliotecas, marcos de desarrollo (frameworks), etc., para acelerar la escritura de funciones comunes. Una biblioteca tiende a ser un archivo JavaScript o CSS existente que proporciona una funcionalidad lista para usar para que la utilices en tu código. Un framework tiende a llevar esta idea más allá, ofreciendo un sistema completo con alguna sintaxis personalizada para que puedas escribir una aplicación web basada en él.
+
+
+$ ¿Cuál será la apariencia de tu sitio Web?
+
+Lo primero es lo primero: planificación
+
+→ Elige tus activos
+En este punto, es bueno comenzar a reunir el contenido que eventualmente aparecerá en tu página web.
+
+→ texto
+→ color del tema
+→ imágenes
+→ tipos de letra
+
+#B03030
+https://www.micachorro.net/wp-content/uploads/2018/02/Golden-Retriever-precio-y-cachorros.png
+
+
+# Manejo de Archivos
+
+Una web consta de muchos archivos: texto del contenido, código, hoja de estilo, contenido multimedia, etc.
+
+
+Debes nombrar los directorios y archivos completamente en minúsculas sin espacios.
+pruebasitio/Miimagen.jpg
+pruebasitio/miimagen.jpg
+
+Los navegadores, servidores y lenguajes de programación no manejan los espacios de manera consistente. Si nuestro archivo tiene espacio algunos servidores lo reemplazarán con "%20" (el código de caracteres para espacios en URI). Lo mejor es separar las palabras con guiones, en lugar de guiones bajos: mi-archivo.html vs. mi_archivo.html
+
+
+En resumen debes usar un guión para los nombres de tus archivos ya que el motor de búsqueda de Google trata un guión como un separador de palabras. Por estos motivos, es mejor adquirir el hábito de escribir los nombres de los directorios y archivos en minúsculas, sin espacios y con palabras separadas por guiones.
+
+
+¿Qué estructura debe tener tu sitio web?
+
+index.html -> Tendrá el contenido de tu página de inicio
+
+images -> Este directorio contendrá todas la imágenes que utilices en tu sitio.
+
+styles -> Este directorio contendrá el código CSS que se utiliza para aplicar estilo al contenido por ejemplo, configurar el texto y los colores de fondo).
+
+scripts ->  Este directorio contendrá todo el código JavaScript utilizado para agregar funcionalidad interactiva a tu sitio (por ejemplo, botones que cargan datos cuando se hace clic en ellos)
+
+
+# Rutas de archivo
+
+Para que los archivos se comuniquen entre sí, debes proporcionar una ruta de archivo entre ellos, básicamente una ruta, para que un archivo sepa dónde está otro.
+
+$ Conceptos básicos de HTML
+
+HTML -> Lenguaje de Marcado de Hipertexto, es el código que se usa para estructurar y desplegar una página web y sus contenidos. Por ejemplo, sus contenidos podrían ser párrafos, una lista con viñetas, o imágenes y tablas de datos.
+
+HTML no es un lenguaje de programación; es un lenguaje de marcado. que define la estructura de tu contenido.
+
+<p>Mi gato es muy gruñon</p>
+
+# Anatomía de un elemento HTML
+       
+Etiqueta de apertura <p>Mi perro es guapo</p> etiqueta de cierre
+                            Contenido
+
+                    |------- Elemento -------|
+
+
+Los elementos pueden tener también atributos, que se ven así:
+
+  |---- Atributo ----|
+<p class="editor-note">Mi perro es muy guapo</p>
+
+
+# Anidar elementos
+
+Puedes colocar elementos dentro de otros esto se llama anidamiento. Se usa si queremos resaltar una palabra del texto, podemos encerrarla en un elemento <strong> , que significa que dicha palabra debe enfatizar (dar valor o importancia a algo):
+
+<p>Mi gato es <strong>muy</strong> gruñon.</p>
+
+Manera incorrecta de anidar elementos:
+<p>Mi gato es <strong>muy gruñon.</p></strong>
+
+# Elementos vacíos
+Algunos no poseen contenido, y son llamados elemento vacíos. Ejemplo, el elemento <img> 
+
+<img src="images/firefox-icon.png" alt="Mi imagen de prueba">
+
+Posee dos atributos, pero no tiene etiqueta de cierre </img> ni contenido encerrado. No afecta a algún contenido su propósito es desplegar una imagen en la página HTML.
+
+# Anatomía de un documento HTML
+
+<!DOCTYPE html> //el tipo de documento. 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi pagina de prueba</title>
+  </head>
+  <body>
+    <img src="images/firefox-icon.png" alt="Mi imagen de prueba">
+  </body>
+</html>
+
+
+<!DOCTYPE html> 
+El tipo de documento. 
+
+<html></html>
+este elemento encierra todo el contenido de la página entera, y a veces, se le conoce como el elemento raíz (root element).
+
+
+<head></head> 
+Este elemento actúa como un contenedor de todo aquello que quieres incluir en la página HTML que no es contenido visible por los visitantes de la página. Incluye cosas como palabras clave (keywords), una descripción de la página que quieres que aparezca en resultados de búsquedas, código CSS para dar estilo al contenido, declaraciones del juego de caracteres, etc.
+
+<meta charset="utf-8> <meta>
+Este elemento establece el juego de caracteres que tu documento usará en utf-8, que incluye casi todos los caracteres de todos los idiomas humanos.
+
+<title></title>
+establece el título de tu página, que es el título que aparece en la pestaña o en la barra de título del navegador cuando la página es cargada, y se usa para describir la página cuando es añadida a los marcadores o como favorita.
+
+<body></body>
+Encierra todo el contenido que deseas mostrar a los usuarios web que visiten tu página, ya sea texto, imágenes, videos, juegos, pistas de audio reproducibles, y demás.
+
+
+# Imágenes
+
+Presta atención nuevamente al elemento imagen <img>:
+
+<img src="images/firefox-icon.png" alt="Mi imagen de prueba">
+
+Esta etiqueta incrusta una imagen en la página, en la posición en que aparece. Lo logra a través del atributo src (source), el cual contiene la ruta path (ruta o ubicación) de la imagen.
+
+También alt (alternative) el cual contiene un texto que debería describir la imagen, y que podría ser accedido por usuarios que no pueden ver la imagen, quizás porque:
+
+1. Son ciegos o tiene deficiencias visuales.
+2. Se produjo algún error en el código que impide que la imagen sea cargada.
+
+en el atributo alt debe proporcionarle al lector la suficiente información que tenga una idea de qué muestra la imagen.
+
+# Marcado de texto
+
+* Encabezados
+Estos elementos de encabezado permiten especificar que ciertas partes del contenido son encabezados, o subencabezados del contenido. HTML posee seis niveles de encabezados <h1>–<h6>, aunque muy probable que solo uses 3-4 como mucho:
+
+<h1>Mi título principal</h1>
+<h2>Mi título de nivel superior</h2>
+<h3>Mi subtítulo</h3>
+<h4>Mi sub-subtítulo</h4>
+
+
+* Párrafos
+Los elementos <p> se utilizan para encerrar párrafos de texto; se usarán frecuentemente para el marcado de contenido de texto regular:
+
+<p>Este es un simple parrafo</p>
+
+
+* Listas
+Mucho del contenido web está dado por listas, así que HTML tiene elementos especiales para ellas. El marcado de listas se realiza siempre en al menos dos elementos. Los dos tipos de listas más comunes son las listas ordenadas y las desordenadas:
+
+1.Las listas desordenadas son aquellas en las que el orden de los items no es relevante, como en una lista de compras. Estas son encerradas en un elemento <ul> (unordered list).
+
+2. Las listas ordenadas son aquellas en las que el orden sí es relevante, como en una receta. Estas son encerradas en un elemento <ol> (ordered list).
+
+Cada elemento de la lista se coloca dentro de un elemento <li> (list item).
+
+Por ejemplo, si quieres transformar parte del siguiente párrafo en una lista:
+
+<p>En Mozilla, somos una comunidad de tecnólogos, pensadores, y constructores que trabajan juntos... </p>
+
+Podrías hacer lo siguiente:
+
+<p>En Mozilla, somos una comunidad de</p>
+
+<ul>
+  <li>tecnólogos</li>
+  <li>pensadores</li>
+  <li>constructores</li>
+</ul>
+
+<p>trabajando juntos... </p>
+
+
+* Vínculos
+Los vínculos o enlaces son muy importantes —son los que hacen de la web, la web—. Para implementar un vínculo, necesitas usar un vínculo simple — <a> — la a es la abreviatura de la palabra inglesa «anchor» («ancla»). Para convertir algún texto dentro de un párrafo en un vínculo, sigue estos pasos:
+
+1. Elige algún texto. Nosotros elegimos «Manifesto Mozilla».
+
+2. Encierra el texto en un elemento <a>, así:
+<a>Manifesto Mozilla</a>
+
+3. Proporciónale al elemento <a> un atributo href, así:
+
+<a href="">Manifesto Mozilla</a>
+
+4. Completa el valor de este atributo con la dirección web con la que quieras conectar al vínculo:
+
+<a href="https://www.mozilla.org/es-AR/about/manifesto/">Manifesto Mozilla</a>
+
+Podrías obtener resultados inesperados si al comienzo de la dirección web omites la parte https:// o http:// llamada protocolo. Así que luego del marcado del vínculo, haz clic en él para asegurarte que te dirige a la dirección deseada.
+
+href podría parecer, en principio, una opción un tanto oscura para un nombre de atributo. Si tienes problemas para recordarla, recuerda que se refiere a hypertext reference (referencia de hipertexto).
+
+
+$ CSS básico
+
+css -> Hojas de estilo en cascada
+Es el código que usas para dar estilo a tu página web.
+
+p {
+  color: red;
+}
+
+Debes aplicar el CSS a tu documento HTML, de otra manera el estilo CSS no cambiará. 
+
+# Anatomía de una regla CSS
+Selector
+  |
+  p { 
+    color: red; — valor de propiedad
+  }   |
+    propiedad
+    |- Declaración -|
+
+La estructura completa es llamada regla predeterminada
+
+Selector
+El elemento HTML en el que comienza la regla. Esta selecciona el(los) elemento(s) a dar estilo (en este caso, los elementos <p> ). Para dar estilo a un elemento diferente, solo cambia el selector.
+
+Declaración
+Una sola regla como color: red; especifica a cuál de las propiedades del elemento quieres dar estilo.
+
+Propiedades
+Maneras en las cuales puedes dar estilo a un elemento HTML. (En este caso, color es una propiedad del elemento <p> ). En CSS, seleccionas qué propiedad quieres afectar en tu regla.
+
+Valor de la propiedad
+A la derecha de la propiedad, después de los dos puntos (:), tienes el valor de la propiedad, para elegir una de las muchas posibles apariencias para una propiedad determinada (hay muchos valores para color además de red).
+
+
+
+# Seleccionar varios elementos
+También puedes seleccionar varios elementos y aplicar una sola regla a todos ellos. Incluye varios selectores separados por comas (,). Por ejemplo:
+
+p, li, h1 {
+  color: red;
+}
+
+
+
+
+# Diferentes tipos de selectores
+
+Existen muchos tipos diferentes de selectores. Antes, solo viste los selectores de elementos, los cuales seleccionan todos los elementos de un tipo dado en los documentos HTML. Sin embargo puedes hacer selecciones más específicas que esas. En seguida están algunos de los tipos de selectores más comunes:
+
+
+* Selector de elemento(selector de etiqueta o tipo): Selecciona todos los elementos HTML del tipo especificado. 
+
+p 
+Selecciona </p>
+
+* Selector de identificación (ID): Selecciona el elemento en la página con el ID especificado (en una página HTML dada, solo se permite un único elemento por ID).
+
+#mi-id
+Selecciona <p id="mi-id">
+y <a id="mi-id">
+
+* Selector de clase: Selecciona	los elementos en la página con la clase especificada (una clase puede aparecer varias veces en una página).
+
+.mi-clase
+Selecciona <p class="mi-clase"> y <p class="mi-clase">
+
+* Selector de atributo: Selecciona los elementos en una página con el atributo especificado.
+
+img[src]
+Selecciona <img src="mimagen.png"> pero no <img>
+
+* Selector de pseudoclase: Selecciona los elementos especificados, pero solo cuando esté en el estado especificado, por ejemplo cuando el puntero esté sobre él.	
+
+a:hover
+Selecciona <a>, pero solo cuando el puntero esté sobre el enlace.
+
+Existen muchos más selectores para explorar, y podrás encontrar una lista más detallada en la guía de Selectores. https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors
+
+
+
+## Fuentes y texto
+
+1. Agrega el elemento <link> en algun lugar del <head>. Debe verse algo así:
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet" type="text/css">
+
+#B03030
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+2. Borra la regla existente en tu archivo style.css. Fue una buena prueba, pero el texto en rojo en realidad no se ve muy bien.
+
+3. font-family -> La propiedad font-family se refiere a la(s) fuente(s) que deseas usar en tu texto.Esta regla define una fuente base global y un tamaño de fuente para usar en toda la página.
+
+Dado que <html> es el elemento primario (o padre) de toda la página, todos los elementos contenidos dentro de él heredan las propiedades font-size y font-family):
+
+html {
+  font-size: 10px; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
+  font-family: "Open Sans", sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */
+}
+
+Nota: Todo lo que está en un documento de CSS entre /* y */ es un comentario en CSS, el cual el navegador descarta cuando carga el código. Este es un espacio donde puedes escribir notas útiles sobre lo que estás haciendo.
+
+4. Ahora escoge el tamaño de fuente para los elementos que contienen texto dentro del cuerpo del HTML (<h1> (en-US), <li>, y <p>). También centra el texto del título, escoge un ancho de línea y espaciado entre letras en el contenido del texto para hacerlo un poco más legible:
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+p, li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+
+## Cajas, cajas, todo se trata de cajas
+
+Una cosa que notarás sobre la escritura de CSS es que trata mucho sobre cajas —ajustando su tamaño, color, posición, etc—. Puedes pensar en la mayoría de los elementos HTML de tu página como cajas apiladas una sobre la otra.
+
+https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9441/323fac82af80f3a7d639fa4e3624ad9d/boxes.jpg
+
+No es de extrañar que el diseño de CSS esté basado principalmente en el modelo de caja. Cada una de las cajas que ocupa espacio en tu página tiene propiedades como estas:
+
+· padding (relleno), el espacio alrededor del contenido. En el ejemplo siguiente, es el espacio alrededor del texto del párrafo.
+· border (marco), la línea que se encuentra fuera del relleno.
+· margin (margen), el espacio fuera del elemento que lo separa de los demás.
+
+https://mdn.mozillademos.org/files/9443/box-model.png
+https://media.prod.mdn.mozit.cloud/attachments/2014/11/18/9443/63d72109948ccedb5e0f0dd5f9cb3716/box-model.png
+
+
+En esta sección también se utiliza:
+
+· width (ancho del elemento)
+· background-color, el color de fondo del contenido y del relleno
+· color, el color del contenido del elemento (generalmente texto)
+· text-shadow: coloca una sombra difuminada en el texto dentro del elemento
+· display: selecciona el modo de visualización para el elemento (no te preocupes de esto por ahora)
+
+Bien, ¡continúa y agrega más código CSS a la página! Sigue añadiendo estas reglas nuevas al final de la página, y no temas experimentar cambiando los valores para ver cómo resulta.
+
+
+
+$ Cambiar el color de la página:
+  -----------------------------
+
+html {
+  background-color: #00539F;
+}
+
+Esta regla asigna un color de fondo a la página entera.
+
+
+$ Dar estilo al cuerpo del documento
+  ----------------------------------
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+
+Ahora tienes varias declaraciones en el elemento body. Revisa una por una:
+
+· width: 600px; — esto hará que el cuerpo siempre tenga 600 píxeles de ancho.
+
+· margin: 0 auto; — cuando seleccionas dos valores dentro de propiedades como margin o padding, el primer valor afectará los lados superior (top) e inferior (bottom) (en este caso haciéndolo en 0), y el segundo valor los lados izquierdo (left) y derecho (right) (aquí, auto es un valor especial que divide el espacio disponible entre derecha e izquierda). Puedes usar esta propiedad con uno, dos, tres o cuatro valores como se explica en la sintaxis de padding (https://developer.mozilla.org/es/docs/Web/CSS/padding#sintaxis). 
+
+· background-color: #FF9500; — como antes, este selecciona el color de fondo de un elemento. Se ha usado un naranja rojizo para el elemento body en contraste con el azul oscuro del elemento <html>. Sigue y experimenta. Siéntete libre de usar white o cualquiera que sea de tu agrado.
+
+· padding: 0 20px 20px 20px; — tienes 4 valores puestos en el relleno, para dar un poco de espacio alrededor del contenido. Esta vez no pondrás relleno en la parte de arriba de body, 20 píxeles a la izquierda, abajo y derecha. Los valores se ponen: arriba, derecha, abajo e izquierda, en ese orden. Como con margin usar esta propiedad con uno, dos, tres o cuatro valores como se explica en la sintaxis de padding (https://developer.mozilla.org/es/docs/Web/CSS/padding#sintaxis).
+
+· border: 5px solid black; — este simplemente pone un borde de 5 píxeles de ancho, continuo y de color negro alrededor del elemento body.
+
+$ Posicionar y dar estilo al título principal de la página:
+  --------------------------------------------------------
+
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: #00539F;
+  text-shadow: 3px 3px 1px black;
+}
+
+Puedes haber notado un hueco horrible en la parte superior de body. Esto sucede porque los navegadores vienen con estilos por defecto, !incluso cuando aún no se ha aplicado ningún archivo CSS! Y esto se debe a que la página este sin estilizar puede ser legigle. ara deshacerte de este espacio elimina el estilo por defecto, agregando margin: 0;.
+
+Enseguida, se ha puesto un relleno arriba y abajo del título de 20 píxeles, y se hizo que el color del texto sea el mismo que el color de fondo de html.
+
+La propiedad text-shadow que aplica una sombra al texto del elemento. Sus cuatro valores son como sigue:
+
+· El primer valor en píxeles asigna el desplazamiento horizontal de la sombra desde el texto —qué tan lejos la mueve a la derecha—. Un valor negativo la moverá a la izquierda.
+
+· El segundo valor en píxeles asigna el desplazamiento vertical de la sombra desde el texto —qué tan lejos la mueve hacia abajo—. En este ejemplo, un valor negativo la desplazaría hacia arriba.
+
+· El tercer valor en píxeles asigna radio de desenfoque de la sombra —un valor grande es igual a una sombra borrosa—.
+
+· El cuarto valor asigna el color base de la sombra.
+
+
+
+
+$ Centrar la imagen
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+Finalmente, centra la imagen para hacer que luzca mejor. Puedes usar nuevamente el truco de margin: 0 auto que usaste antes para body, pero existen diferencias que requieren que hagas algo más para que el código CSS funcione.
+
+El elemento <body> es un elemento en nivel de bloque (block-level), lo que significa que tomará espacio en la página y que puede tener otros valores de espacio aplicables como margen. Las imágenes, por otra parte, son elementos inline, lo que quiere decir que no puedes aplicarles márgenes, debes dar a la imagen un comportamiento de block-level usando display: block;.
+
+⚠️ Nota: las instrucciones anteriores asumen que estás usando una imagen más pequeña que el ancho establecido en body (600 píxeles). Si tu imagen es más grande, desbordará el cuerpo, derramándose en el resto de la página. Para solucionar esto, puedes hacer lo siguiente: 1) reducir el ancho de la imagen usando un editor gráfico, o 2) usar CSS para dimensionar la imagen estableciendo la propiedad width en el elemento <img> con un valor menor.
+
+⚠️Nota: no te preocupes si aún no entiendes display: block; y la diferencia entre un elemento de bloque y un elemento inline. Lo entenderás en tanto estudies CSS a profundidad. Puedes encontrar más en cuanto a los diferentes valores disponibles para display en la página de referencia de display (https://developer.mozilla.org/es/docs/Web/CSS/display).  
+
+
+
+## Conclusión 
+Si has seguido las instrucciones de esta publicación, deberías terminar con una página que luce algo así (también puedes ver nuestra versión aquí - https://mdn.github.io/beginner-html-site-styled/):
+
+
+https://mdn.mozillademos.org/files/9455/website-screenshot-final.png
+
+
+Si te atoraste, puedes comparar tu trabajo con el código del ejemplo finalizado en GitHub (https://github.com/mdn/beginner-html-site-styled/blob/gh-pages/styles/style.css).
+
+Aquí, solo has arañado la superficie de CSS. Si quieres encontrar más, puedes ir a la página de aprendizaje de CSS (https://developer.mozilla.org/es/docs/Learn/CSS).
+
+
+# Fudamentos de JavaScript
+
+JavaScript es el lenguaje de programación que debes usar para añadir características interactivas a tu sitio web, (por ejemplo, juegos, eventos que ocurren cuando los botones son presionados o los datos son introducidos en los formularios, efectos de estilo dinámicos, animación, y mucho más).
+
+## ¿Qué es JavaScript realamente?
+
+JavaScript es un robusto lenguaje de programación que se puede aplicar a un documento HTML y usarse para crear interactividad dinámica en los sitios web. Fue inventado por Brendan Eich, cofundador del proyecto Mozilla, Mozilla Foundation y la Corporación Mozilla
+
+Puedes hacer casi cualquier cosa con JavaScript. Puedes empezar con pequeñas cosas como carruseles, galerías de imágenes, diseños fluctuantes, y respuestas a las pulsaciones de botones. Con más experiencia, serás capaz de crear juegos, animaciones 2D y gráficos 3D, aplicaciones integradas basadas en bases de datos ¡y mucho más!
+
+JavaScript por sí solo es bastante compacto aunque muy flexible, y los desarrolladores han escrito gran cantidad de herramientas encima del núcleo del lenguaje JavaScript, desbloqueando una gran cantidad de funcionalidad adicional con un mínimo esfuerzo. Esto incluye:
+
+· Interfaces de Programación de Aplicaciones del Navegador (APIs) — APIs construidas dentro de los navegadores que ofrecen funcionalidades como crear dinámicamente contenido HTML y establecer estilos CSS, hasta capturar y manipular un vídeo desde la cámara web del usuario, o generar gráficos 3D y muestras de sonido.
+
+· APIs de terceros, que permiten a los desarrolladores incorporar funcionalidades en sus sitios de otros proveedores de contenidos como Twitter o Facebook.
+
+· Marcos de trabajo y librerías de terceros que puedes aplicar a tu HTML para que puedas construir y publicar rápidamente sitios y aplicaciones.
+
+  
+Ya que se supone que este artículo es solo una introducción ligera a JavaScript, la intención no es confundirte en esta etapa hablando en detalle sobre cuál es la diferencia entre el núcleo del lenguaje JavaScript y las diferentes herramientas listadas arriba. Puedes aprender todo eso en detalle más tarde, en el Área de Aprendizaje en MDN (https://developer.mozilla.org/es/docs/Learn/JavaScript), y en el resto de MDN.
+
+Debajo se presentan algunos aspectos del núcleo del lenguaje y también jugarás con unas pocas características de la API del navegador. ¡Diviértete!
+
+
+
+## Ejemplo «¡Hola Mundo!» 
+
+
+La sección de arriba suena realmente emocionante, y debería serlo. JavaScript es una de las tecnologías web más emocionantes, y cuando comiences a ser bueno en su uso, tus sitios web entrarán en una nueva dimensión de energía y creatividad.
+
+Sin embargo, sentirse cómodo con JavaScript es un poco más difícil que sentirse cómodo con HTML y CSS. Deberás comenzar poco a poco y continuar trabajando en pasos pequeños y consistentes. Para comenzar, mostraremos cómo añadir JavaScript básico a tu página, creando un «¡Hola Mundo!» de ejemplo (el estándar en los ejemplos básicos de programación (https://es.wikipedia.org/wiki/Hola_mundo)).
+
+
+⚠️ Importante: si no has venido siguiendo el resto de nuestro curso, (https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip) descarga este código de ejemplo y úsalo como punto de partida.
+
+1. Primero, ve a tu sitio de pruebas y crea una carpeta llamada scripts. Luego, dentro de la nueva carpeta de scripts, crea un nuevo archivo llamado main.js y guárdalo.
+
+2. A continuación, abre tu archivo index.html e introduce el siguiente código en una nueva línea, justo antes de la etiqueta de cierre </body>:
+
+<script src="scripts/main.js"></script>
+
+Esto hace básicamente el mismo trabajo que el elemento <link> para CSS: aplica el código JavaScript a la página, para que pueda actuar sobre el HTML (y CSS, o cualquier cosa en la página).
+
+4. Ahora añade el siguiente código al archivo main.js:
+
+const miTitulo = document.querySelector('h1');
+miTitulo.textContent = '¡Hola mundo!';
+
+5. Finalmente, asegúrate de que has guardado los archivos HTML y JavaScript, y abre index.html en el navegador. Deberías ver algo así:
+
+https://mdn.mozillademos.org/files/9543/hello-world.png
+
+
+Nota: la razón por la que has puesto el elemento <script> (en-US) casi al final del documento HTML es porque el navegador carga el HTML en el orden en que aparece en el archivo.
+
+Si se cargara primero JavaScript y se supone que debe afectar al HTML que tiene debajo, podría no funcionar, ya que ha sido cargado antes que el HTML sobre el que se supone debe trabajar. Por lo tanto, colocar el JavaScript cerca del final de la página es normalmente la mejor estrategia. Para aprender más sobre enfoques alternativos, mira Estrategias de carga de scripts.
+
+
+Nota: la razón por la que has puesto el elemento <script> (en-US) casi al final del documento HTML es porque el navegador carga el HTML en el orden en que aparece en el archivo.
+
+Si se cargara primero JavaScript y se supone que debe afectar al HTML que tiene debajo, podría no funcionar, ya que ha sido cargado antes que el HTML sobre el que se supone debe trabajar. Por lo tanto, colocar el JavaScript cerca del final de la página es normalmente la mejor estrategia. Para aprender más sobre enfoques alternativos, mira Estrategias de carga de scripts.
+
+¿Qué ha ocurrido?
+
+El texto del título ha sido cambiado por ¡Hola mundo! usando JavaScript querySelector() función para obtener una referencia al título y almacenarla en una variable llamada miTitulo.  Esto es muy similar a lo que hiciste con CSS usando selectores —quieres hacer algo con un elemento, así que tienes que seleccionarlo primero—.
+
+
+⚠️Nota: Las dos características que has utilizado en este ejercicio forman parte de la API del Modelo de Objeto de Documento (DOM), que tiene la capacidad de manipular documentos.
+
+
+
+## Curso intensivo de fundamentos del lenguaje
+
+Ahora se explicarán algunas de las funciones básicas del lenguaje JavaScript para que puedas comprender mejor cómo funciona todo. Mejor aún, estas características son comunes para todos los lenguajes de programación. Si puedes entender esos fundamentos, deberías ser capaz de comenzar a programar en casi cualquier cosa.
+
+⚠️Importante: en este artículo, trata de introducir las líneas de código de ejemplo en la consola de tu navegador para ver lo que sucede. Para más detalles sobre consolas JavaScript, mira Descubre las herramientas de desarrollo de los navegadores.
+
+$ variables
+
+Las Variables son contenedores en los que puedes almacenar valores. Primero debes declarar la variable con la palabra clave var (menos recomendado) o let, seguida del nombre que le quieras dar. Se recomienda más el uso de let que de var (más adelante se profundiza un poco sobre esto):
+
+let nombreDeLaVariable;
+
+
+⚠️Nota: todas las líneas en JS deben acabar en punto y coma (;) para indicar que es ahí donde termina la declaración. Si no los incluyes puedes obtener resultados inesperados. Sin embargo, algunas personas creen que es una buena práctica tener punto y coma al final de cada declaración. Hay otras reglas para cuando se debe y no se debe usar punto y coma. Para más detalles, vea Guía del punto y coma en JavaScript (http://news.codecademy.com/your-guide-to-semicolons-in-javascript/) (en inglés).
+
+
+⚠️Nota: puedes llamar a una variable con casi cualquier nombre, pero hay algunas restricciones (ver (https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types#variables) este artículo sobre las reglas existentes). Si no estás seguro, puedes comprobar el nombre de la variable (https://mothereff.in/js-variables) para ver si es válido.
+
+⚠️Nota: JavaScript distingue entre mayúsculas y minúsculas. miVariable es una variable distinta a mivariable. Si estás teniendo problemas en tu código, revisa las mayúsculas y minúsculas.
+
+⚠️Nota: para más detalles sobre la diferencia entre var y let, vea Diferencia entre var y let (https://developer.mozilla.org/es/docs/Learn/JavaScript/First_steps/Variables#diferencia_entre_var_y_let).
+
+Tras declarar una variable, puedes asignarle un valor:
+
+nombreDeLaVariable = 'Bob';
+
+Puedes hacer las dos cosas en la misma línea si lo necesitas:
+
+let nombreDeLaVariable = 'Bob';
+
+
+Puedes obtener el valor de la variable llamándola por su nombre:
+
+nombreDeLaVariable;
+
+Después de haberle dado un valor a la variable, puedes volver a cambiarlo:
+
+let nombreDeLaVariable = 'Bob';
+nombreDeLaVariable = 'Steve';
+
+Advierte que las variables tienen distintos tipos de datos (https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures):
+
+Variable -> String 
+
+Explicación: 	Esto es una secuencia de texto conocida como cadena. Para indicar que la variable es una cadena, debes escribirlo entre comillas.
+
+Ejemplo: 
+
+let miVariable = 'Bob';
+
+
+Variable -> Number
+Explicación: Esto es un número. Los números no tienen comillas.
+
+Ejemplo:
+
+let miVariable = 10;
+
+
+Variable: Boolean
+
+Explicación: Tienen valor verdadero/falso. true/false son palabras especiales en JS, y no necesitan comillas.	
+
+Ejemplo:
+let miVariable = true;
+
+
+Variable -> Array
+
+Explicación: Una estructura que te permite almacenar varios valores en una sola referencia.
+
+Ejemplo: 
+let miVariable = [1,'Bob','Steve',10];
+Llama a cada miembro del array así: miVariable[0], miVariable[1], etc.
+
+
+Variable -> Object 
+
+Explicación: Básicamente cualquier cosa. Todo en JavaScript es un objeto y puede ser almacenado en una variable. Mantén esto en mente mientras aprendes.
+
+Ejemplo:
+let miVariable = document.querySelector('h1');
+Todos los ejemplos anteriores también.
+
+Entonces, ¿para qué necesitamos las variables? Las variables son necesarias para hacer cualquier cosa interesante en programación. Si los valores no pudieran cambiar, entonces no podrías hacer nada dinámico, como personalizar un mensaje de bienvenida de un usuario que visita tu página, cambiar la imagen que se muestra en una galería de imágenes, etc.
+
+
+$ Comentarios
+
+Puedes escribir comentarios entre el código JavaScript, igual que puedes en CSS. El navegador ignora el texto marcado como comentario. En JavaScript, los comentarios de una sola línea se escriben así:
+
+// Esto es un comentario
+
+
+Pero también puedes escribir comentarios en más de una línea, igual que en CSS:
+
+/*
+Esto es un comentario
+de varias líneas.
+*/
+
+
+$ Operadores
+
+Un operador es básicamente un símbolo matemático que puede actuar sobre dos valores (o variables) y producir un resultado. En la tabla de abajo aparecen los operadores más simples, con algunos ejemplos para probarlos en la consola del navegador.
+
+* Operador: Suma/concatena:
+  ------------------------
+Explicación: Se usa para sumar dos números, o juntar dos cadenas en una.
+
+Símbolo: + 
+
+Ejemplo:
+6 + 9;
+"Hola " + "mundo!";
+
+
+* Operador: Resta, multiplicación, división:
+  -----------------------------------------
+Explicación: Estos hacen lo que esperarías que hicieran en las matemáticas básicas.
+
+Simbolos: -, * , /
+
+Ejemplo: 
+9 - 3;
+8 * 2; //La multiplicación en JS es un asterisco
+9 / 3;
+
+
+* Operador de asignación:
+  ----------------------
+Los has visto anteriormente: asigna un valor a una variable.
+
+Simbolo: =
+
+Ejemplo:
+let mivariable = 'Bob';
+
+* Operador: identidad/igualdad:
+  ----------------------------
+Explicación: Comprueba si dos valores son iguales entre sí, y devuelve un valor de true/false (booleano).
+
+Simbolo: ===
+
+Ejemplo: 
+let miVariable = 3;
+miVariable === 4;
+
+
+* Operador: Negación, distinto (no igual):
+  ---------------------------------------
+Explicación: En ocasiones utilizado con el operador de identidad, la negación es en JS el equivalente al operador lógico NOT — cambia true por false y viceversa.
+
+Simbolo: !, !==
+
+En ocasiones utilizado con el operador de identidad, la negación es en JS el equivalente al operador lógico NOT — cambia true por false y viceversa.
+
+Hay muchos operadores por explorar, pero con esto será suficiente por ahora. Mira Expresiones y operadores (https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators) para ver la lista completa.
+
+
+⚠️Nota: mezclar tipos de datos puede dar lugar a resultados extraños cuando se hacen cálculos, así que asegúrate de que relacionas tus variables correctamente y de que recibes los resultados que esperabas. Por ejemplo, teclea: "3" + "25" en tu consola. ¿Por qué no obtienes lo que esperabas? Porque las comillas convierten los números en "strings" (el término inglés para denominar cadenas de caracteres) y de este modo has acabado con los "strings" concatenados entre sí, y no con los números sumados. Si tecleas: 35 + 25, obtendrás el resultado correcto.
+
+
+$ Condicionales
+
+Las condicionales son estructuras de código que permiten comprobar si una expresión devuelve true o no, y después ejecuta un código diferente dependiendo del resultado. La forma de condicional más común es la llamada if... else. Entonces, por ejemplo:
+
+
+let helado = 'chocolate';
+if (helado === 'chocolate') {
+  alert('¡Sí, amo el helado de chocolate!');
+} else {
+  alert('Awwww, pero mi favorito es el de chocolate...');
+}
+
+La expresión dentro de if (... ) es el criterio — este usa al operador de identidad (descrito arriba) para comparar la variable helado con la cadena chocolate para ver si las dos son iguales. Si esta comparación devuelve true, el primer bloque de código se ejecuta. Si no, ese código se omite y se ejecuta el segundo bloque de código después de la declaración else.
+
+$ Funciones
+
+Las funciones (https://developer.mozilla.org/es/docs/Glossary/Function) son una manera de encapsular una funcionalidad que quieres reutilizar, de manera que puedes llamar esa función con un solo nombre, y no tendrás que escribir el código entero cada vez que la utilices. Ya has visto algunas funciones más arriba, por ejemplo:
+
+1. let nombreDeLaVariable = document.querySelector('h1');
+
+2. alert('¡Hola!');
+
+Estas funciones document.querySelector y alert están integradas en el navegador para poder utilizarlas en cualquier momento.
+
+
+Si ves algo que parece un nombre de variable, pero tiene paréntesis —()— al final, probablemente es una función. Las funciones con frecuencia toman argumentos —pedazos de datos que necesitan para hacer su trabajo—. Estos se colocan dentro de los paréntesis, y se separan con comas si hay más de uno.
+
+
+Por ejemplo, la función alert() hace aparecer una ventana emergente dentro de la ventana del navegador, pero necesitas asignarle una cadena como argumento para decirle qué mensaje se debe escribir en la ventana emergente.
+
+
+Las buenas noticias son que podemos definir nuestras propias funciones —en el siguiente ejemplo escribimos una función simple que toma dos números como argumentos y los multiplica entre sí—:
+
+function multiplica(num1,num2) {
+  let resultado = num1 * num2;
+  return resultado;
+}
+
+⚠️Nota: : la sentencia return (https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/return) le dice al navegador que devuelva la variable resultado fuera de la función, para que esté disponible para su uso. Esto es necesario porque las variables definidas dentro de funciones, solo están disponibles dentro de esas funciones. Esto se conoce como «ámbito (https://developer.mozilla.org/es/docs/Glossary/Scope) (scope en inglés) de la variable». Lee más sobre ámbito o alcance de la variable (https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types#%C3%A1mbito_de_variable).
+
+
+$ Eventos
+
+Para crear una interacción real en tu sitio web, debes usar eventos. Estos son unas estructuras de código que captan lo que sucede en el navegador, y permite que en respuesta a las acciones que suceden se ejecute un código. El ejemplo más obvio es un clic (click event), que se activa al hacer clic sobre algo. Para demostrar esto, prueba ingresando lo siguiente en tu consola, luego da clic sobre la página actual:
+
+document.querySelector('html').onclick = function() {
+    alert('¡Ouch! ¡Deja de pincharme!');
+}
+
+Hay muchas maneras de enlazar un evento a un elemento; aquí hemos seleccionado el elemento <html> y le asignamos a su propiedad onclick una función anónima (función sin nombre) que contiene el código que se ejecutará cuando el evento suceda.
+
+Nota que
+
+document.querySelector('html').onclick = function() {};
+
+## Sobrecargar tu sitio web de ejemplo
+
+Ahora vas a repasar un poco lo básico de JavaScript. Añadirás un par de funcionalidades a tu sitio para demostrar lo que puedes hacer.
+
+$ Añadir un cambiador de imagen
+
+En esta sección añadirás otra imagen a tu sitio usando la DOM API y agregarás un poco de código para cambiar entre imágenes al hacer clic.
+
+  1. Primero que todo, busca una imagen que te guste para tu sitio. Asegúrate que sea del mismo tamaño que la primera, o lo más cerca posible.
+
+  2. Guarda tu imagen en tu carpeta images.
+
+  3. Renombra esta imagen «firefox2.png» (sin las comillas).
+
+  4. Ve a tu archivo main.js y agrega el siguiente JavaScript (si tu JavaScript de «Hola Mundo» está aún allí, bórralo).
+
+  let miImage = document.querySelector('img');
+  miImage.onclick = function () {
+    let miSrc = miImage.getAttribute('src');
+    if (miSrc === 'images/firefox-icon.png') {
+      miImage.setAttribute('src','images/firefox2.png');
+    } else {
+      miImage.setAttribute('src', 'images/firefox-icon.png');
+    }
+}
+
+5. Guarda todos los archivos y carga index.html en tu navegador. Ahora cuando hagas clic en la imagen, ¡esta debe cambiar por otra!
+
+Esto fue lo que sucedió: se almacena una referencia a tu elemento <img> en la variable miImage. Luego, haces que esta propiedad del manejador de evento onclick de la variable sea igual a una función sin nombre (una función «anónima»). Ahora, cada vez que se haga clic en la imagen:
+
+  1. El código recupera el valor del atributo src de la imagen.
+
+  2. El código usa una condicional para comprobar si el valor src es igual a la ruta de la imagen original:
+
+    i. Si es así, el código cambia el valor de src a la ruta de la segunda imagen, forzando a que se cargue la otra imagen en el elemento <img>.
+
+    ii. Si no es así (significa que ya fue modificada), se cambiará el valor de src nuevamente a la ruta de la imagen original, regresando a como era en un principio.
+
+
+$ Añadir un mensaje de bienvenida personalizado
+
+Ahora añadirás un poco más de código, para cambiar el título de la página o incluir un mensaje personalizado de bienvenida para cuando el usuario ingrese por primera vez. Este mensaje de bienvenida permanecerá luego de que el usuario abandone la página y estará disponible para cuando regrese. Lo guardarás usando Web Storage API (https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API). También se incluirá una opción para cambiar el usuario y por lo tanto también el mensaje de bienvenida en cualquier momento que se requiera.
+
+    1. En index.html, agrega el siguiente código antes del elemento <script> (en-US) (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script):
+
+      <button>Cambiar de usuario</button>
+
+    2. En main.js, agrega el siguiente código al final del archivo, exactamente como está escrito. Esto toma referencia al nuevo botón que se agregó y al título y los almacena en variables:
+
+      let miBoton = document.querySelector('button');
+      let miTitulo = document.querySelector( 'h1');
+
+    3. Ahora agrega la siguiente función para poner el saludo personalizado, lo que no causará nada aún, pero arreglarás esto en un momento:
+
+      function estableceNombreUsuario() {
+          let miNombre = prompt('Por favor, ingresa tu nombre.');
+          localStorage.setItem('nombre', miNombre);
+          miTitulo.textContent = 'Mozilla es genial,' + miNombre;
+      }
+
+    La función estableceNombreUsuario() contiene una función prompt(), que crea un cuadro de diálogo como lo hace alert(); la diferencia es que prompt() (https://developer.mozilla.org/es/docs/Web/API/Window/prompt) pide al usuario un dato, y almacena este dato en una variable cuando el botón Aceptar del cuadro de diálogo es presionado. En este caso, pedirás al usuario que ingrese su nombre. Luego, llamarás la API localStorage, que nos permite almacenar datos en el navegador y recuperarlos luego. Usarás la función setItem() de localStorage, que crea y almacena un dato en el elemento llamado 'nombre', y coloca este valor en la variable miNombre que contiene el nombre que el usuario ingresó. Finalmente, establecerás el textContent del título a una cadena, más el nombre de usuario recientemente almacenado.
+
+    4. Luego, agregarás este bloque if ... else. Se podría llamar a esto el código de inicialización, como se ha establecido para cuando carga la app por primera vez:
+
+      if (!localStorage.getItem('nombre')) {
+          estableceNombreUsuario();
+      }
+      else {
+          let nombreAlmacenado = localStorage.getItem('nombre');
+      miTitulo.textContent = 'Mozilla es genial,' + nombreAlmacenado;
+      }
+
+    La primera línea de este bloque usa el operador de negación (NO lógico representado por !) para comprobar si el elemento 'nombre' existe. Si no existe, la función estableceNombreUsuario() se iniciará para crearlo. Si ya existe (como por ejemplo cuando el usuario ya ingresó al sitio), se recupera el dato del nombre usando getItem() y se fija mediante textContent del título a la cadena, más el nombre del usuario, como hiciste dentro de estableceNombreUsuario().
+
+    5.Finalmente, agrega abajo el evento onclick que manipulará el botón, de modo que cuando sea pulsado se inicie la función estableceNombreUsuario(). Esto permitirá al usuario establecer un nuevo nombre cada vez que lo desee al pulsar el botón:
+
+      miBoton.onclick = function() {
+        estableceNombreUsuario();
+      }
+
+Ahora cuando visites tu sitio por primera vez, este te pedirá tu nombre y te dará un mensaje personalizado de bienvenida. Puedes cambiar cuantas veces quieras el nombre al presionar el botón. Y como un bonus añadido, ya que el nombre se almacena en el localStorage, este permanecerá después de que cierre el sitio, ¡manteniendo ahí el mensaje personalizado cuando abras el sitio la próxima vez!
+
+$ ¿Un nombre de usuario nulo?
+
+Cuando ejecutes el ejemplo y obtengas el cuadro de diálogo que solicita que introduzcas tu nombre de usuario, intenta pulsar el botón Cancelar. Deberías terminar con un título que diga que Mozilla es genial, null. Esto sucede porque, cuando cancelas el mensaje, el valor se establece como null. Null (nulo) es un valor especial en JavaScript que se refiere a la ausencia de un valor.
+
+Además, prueba a dar clic en Aceptar sin introducir un nombre. Deberías terminar con un título que diga que Mozilla es genial, por razones bastante obvias.
+
+Para evitar estos problemas, podrías comprobar que el usuario no ha introducido un nombre en blanco. Actualiza tu función estableceNombreUsuario() a lo siguiente:
+
+
+  function estableceNombreUsuario() {
+    let miNombre = prompt('Introduzca su nombre.');
+    if(!miNombre) {
+      estableceNombreUsuario();
+    } else {
+      localStorage.setItem('nombre', miNombre);
+      miTitulo.innerHTML = 'Mozilla is genial, ' + miNombre;
+    }
+  }
+
+## Conclusión
+
+Si has seguido las instrucciones en este artículo, tendrás una página que luzca como esta (también puede ver nuestra versión aquí) (https://mdn.github.io/beginner-html-site-scripted/):
+
+https://mdn.mozillademos.org/files/9539/website-screen-scripted.png
+
+
+
+# Publicar tu sitio web 
+
+Una vez que termines de escribir tu código y organizar los archivos que forman parte de tu sitio, debes ponerlo en línea para que la gente pueda consultarlo. Este artículo muestra cómo conseguir de manera sencilla que tu código esté en línea.
+
+## ¿Cuáles son las opciones?
+
+Publicar un sitio no es un tema sencillo, principalmente porque hay muchas maneras diferentes de hacerlo. En este artículo no se trata de ver todos los modos posibles. En su lugar, discutiremos los pros y contras de tres amplias estrategias desde el punto de vista de un principiante, y luego debes seleccionar qué método usarás.
+
+$ Obtener alojamiento y un nombre de dominio
+
+Si deseas un control total sobre tu sitio web publicado, probablemente necesitarás gastar dinero para comprar:
+
+· Alojamiento (Hosting) — espacio de almacenamiento alquilado en el servidor web (https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_web_server) de una compañia de alojamientos. Pones los archivos de tu sitio web en este espacio, y el servidor web suministra el contenido a los usuarios que lo solicitan.
+
+· Un nombre de dominio (https://developer.mozilla.org/es/docs/Learn/Common_questions/What_is_a_domain_name) — dirección única mediante la cual la gente puede encontrar tu sitio web, como https://www.mozilla.org, o https://es.wikipedia.org/. Puedes tomar en alquiler el nombre de tu dominio durante algunos años en un registrador de dominio.
+
+Muchos sitios web profesionales toman esta opción.
+
+
+Además, necesitarás un programa de protocolo de transferencia de archivo (File Transfer Protocol, FTP) para transferir los archivos que conforman tu sitio web al servidor (mira más detalles de cuánto puede costar: software). Los programas FTP varían ampliamente, pero en general tienes que conectarte a tu servidor web contratado mediante detalles proporcionados por tu empresa de alojamiento (por ejemplo: nombre de usuario, contraseña, nombre del host). Una vez conectado con el servidor web el programa te mostrará tus archivos locales y los archivos del servidor web en dos ventanas y te proporcionará una forma de transferir los archivos de un lado a otro.
+
+https://mdn.mozillademos.org/files/9469/ftp.jpg
+
+
+$ Consejos para elegir alojamiento y dominio
+
+· En MDN no promovemos empresas comerciales de alojamiento o resgistradoras de nombre de dominio específicas. Para encontrarlas basta con buscar «alojamiento web» o «hosting web» y «nombres de dominio». A veces las empresas proporcionan ambos en un paquete único. Los registradores acostumbran a facilitar la manera de comprobar si el nombre de dominio que deseas para tu sitio está disponible.
+
+· El proveedor de servicio de Internet (https://developer.mozilla.org/es/docs/Glossary/ISP) (ISP) de tu casa u oficina puede proporcionar algún alojamiento limitado para un pequeño sitio web. El conjunto de características disponibles será limitado, pero podría ser perfecto para tus primeros experimentos; ¡ponte en contacto con ellos y pregunta!
+
+· Hay servicios gratiuitos disponibles como Neocities, Blogspot, y Wordpress. Una vez más, obtienes lo que pagas, pero son ideales para tus experimentos iniciales. Los servicios gratuitos en su mayoría no requieren software de FTP para transferencias de archivos pues permiten arrastrar y soltar archivos justo dentro de su interfaz web.
+
+· Muchas compañías proporcionan alojamiento y dominio simultáneamente.
+
+
+$ Utilizar una herramienta en línea como Github o Dropbox
+
+Algunas herramientas te permiten publicar tu sitio en línea:
+
+· GitHub (https://github.com/) es un sitio de «codificación social». Te permite cargar repositorios de código para almacenarlos en el sistema de control de versiónes de Git (http://git-scm.com/). De esta manera puedes colaborar en proyectos de código pues por defecto el sistema es de código abierto, lo que significa que cualquier persona en el mundo puede encontrar tu código en GitHub, usarlo, aprender de él y mejorarlo. ¡Puedes hacer esto con el código de otra persona también! Git es un sistema de control de versiones (https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Acerca-del-Control-de-Versiones) muy popular y GitHub es una comunidad muy importante y útil por lo que la mayor parte de empresas de tecnología ahora lo usan en su proceso laboral. GitHub tiene una característica muy útil llamada GitHub Pages (https://pages.github.com/), que te permite exponer el código de tu sitio web en vivo en la web.
+
+· Dropbox (https://www.dropbox.com/) es un sistema de almacenamiento de archivos que te permite guardar los archivos en la web y tenerlos disponibles desde cualquier ordenador. Cualquier persona con una conexión a Internet puede acceder a cualquier carpeta de Dropbox que esté accesible al público. Si esa carpeta contiene los archivos del sitio web, estos serán visualizados como un sitio web de forma automática.
+
+· Google (https://cloud.google.com/appengine/) App Engine es una poderosa plataforma que permite construir y ejecutar aplicaciones en la infraestructura de Google, ya sea que necesites construir una aplicación web de varios niveles desde cero o alojar un sitio web estático. Para obtener más información consulta ¿Cómo se aloja un sitio web en Google App Engine? (en inglés) (https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_do_you_host_your_website_on_Google_App_Engine).
+
+A diferencia de la mayoría de alojamientos (servicios de hosting), tales herramientas son por lo general libres de utilizar, pero solo permiten un conjunto de funciones limitadas.
+
+
+$ Utilizar un entorno basado en web como CodePen
+
+Existe un número de aplicaciones web que emulan un entorno de desarrollo de sitios web, permitiendo que ingreses tu código HTML, CSS y Javascript y luego muestran los resultados de dicho código como un sitio web, ¡todo en una pestaña del navegador! En términos generales, estas herramientas son bastante sencillas, geniales para aprender, buenas para compartir código (por ejemplo, si quieres compartir con alguien una técnica o pedir ayuda en la depuración del código) y gratuitas para las funciones básicas. Además, mantienen tu página renderizada en una única dirección web. Sin embargo, las características básicas son muy limitadas y estas aplicaciones usualmente no proveen espacio de almacenamiento para recursos (como imágenes).
+
+Prueba con algunos de estos ejemplos y observa cuál es el que mejor se adapta a tu gusto:
+
+· JSFiddle (http://jsfiddle.net/)
+
+· Glitch (https://glitch.com/)
+
+· JS Bin (http://jsbin.com/)
+
+· CodePen (https://codepen.io/)
+
+https://mdn.mozillademos.org/files/9471/jsbin-screen.png
+
+## Publicar a través de Github
+
+Explicados estos tres métodos veamos ahora cómo publicar fácilmente, de forma muy visual e intuitiva, o bien por medio de comandos, tu sitio a través de GitHub Pages (en inglés) (https://pages.github.com/).
+
+$ De manera visual y sin necesidad de más herramientas
+
+$ Subir tus archivos a GitHub a través de la línea de comandos
+
+$ Conocer más de GitHub
+
+## Conclusión
